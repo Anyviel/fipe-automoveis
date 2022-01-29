@@ -2,7 +2,7 @@ import React from 'react';
 
 export const useFetch = () => {
 
-  const [ data, setData ] = React.useState(null);
+  const [ data, setData ] = React.useState<any>(null);
   const [ error, setError ] = React.useState(null);
   const [ loading, isLoading ] = React.useState(false);
 
