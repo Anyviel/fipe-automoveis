@@ -1,7 +1,8 @@
 import React from 'react';
 import Head from 'next/head';
-import { Box, CircularProgress, createStyles } from '@mui/material';
+import { Box, Button, CircularProgress, createStyles } from '@mui/material';
 import { makeStyles } from '@material-ui/styles';
+import Link from 'next/link';
 
 const useStyles = makeStyles(() => createStyles({
   flexDefault: {
@@ -56,26 +57,39 @@ const ResultadoPage = ({ veiculo, loading }: IProps) => {
             gap={2}
             className={`${styles.flexDefault} ${styles.bgColorGreen}`}
           >
-            <h2 style={{margin: 0}}>{`Tabela Fipe: Preço ${veiculo?.Marca} ${veiculo?.Modelo} ${veiculo?.AnoModelo}`}</h2>
-            <Box
-              component='div'
-              p={2}
-              color='#fff'
-              borderRadius='50px'
-              textTransform='uppercase'
-              fontSize='18px'
-              fontWeight='700'
-              className={styles.bgColorBlue}
-            >
-              {veiculo?.Valor}
+            {
+              veiculo ? (
+                <>
+                  <h2 style={{margin: 0}}>{`Tabela Fipe: Preço ${veiculo?.Marca} ${veiculo?.Modelo} ${veiculo?.AnoModelo}`}</h2>
+                  <Box
+                    component='div'
+                    p={2}
+                    color='#fff'
+                    borderRadius='50px'
+                    textTransform='uppercase'
+                    fontSize='18px'
+                    fontWeight='700'
+                    className={styles.bgColorBlue}
+                  >
+                    {veiculo?.Valor}
+                  </Box>
+                  <Box
+                    component='small'
+                    color='#333'
+                  >
+                    Este é o preço de compra do veículo.
+                  </Box>
+                </>
+              ) : (
+                <Link href='/' passHref>
+                  <Button
+                    variant='contained'
+                    color='primary'
+                  >Fazer Consulta</Button>
+                </Link>
+                )
+              }
             </Box>
-            <Box
-              component='small'
-              color='#333'
-            >
-              Este é o preço de compra do veículo.
-            </Box>
-          </Box>
         </Box>
       )}
     </>

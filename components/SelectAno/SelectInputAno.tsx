@@ -29,7 +29,7 @@ const SelectInputAno = ({ id, label, value, onChange, marcaId, modeloId }: ISele
 
   return (
   <>
-    {error && <div>Ocorreu um Erro.</div>}
+    {/* {error && <div>Ocorreu um Erro.</div>} */}
     {!error && marcaId && modeloId && (
       <FormControl fullWidth variant="filled">
         <InputLabel id={label}>{label}</InputLabel>
@@ -40,7 +40,7 @@ const SelectInputAno = ({ id, label, value, onChange, marcaId, modeloId }: ISele
           onChange={onChange}
           disableUnderline
         >
-          <MenuItem value="">
+          <MenuItem value="" disabled>
             <em>Selecione um Modelo</em>
           </MenuItem>
           {!error && data?.map((option: any) => (

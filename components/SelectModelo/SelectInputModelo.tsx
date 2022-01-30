@@ -40,7 +40,7 @@ const SelectInputModelo = ({ id, label, value, onChange, marcaId }: ISelectProps
           disableUnderline
           disabled={!marcaId}
         >
-          <MenuItem value="">
+          <MenuItem value="" disabled>
             <em>Selecione um Modelo</em>
           </MenuItem>
           {!error && data?.modelos?.map((option: any) => (
