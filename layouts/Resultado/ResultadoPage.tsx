@@ -56,7 +56,7 @@ const ResultadoPage = ({ veiculo, loading }: IProps) => {
             gap={2}
             className={`${styles.flexDefault} ${styles.bgColorGreen}`}
           >
-            <h2 style={{margin: 0}}>{`Tabela Fipe: Preço ${veiculo?.Marca} ${veiculo?.AnoModelo}`}</h2>
+            <h2 style={{margin: 0}}>{`Tabela Fipe: Preço ${veiculo?.Marca} ${veiculo?.Modelo} ${veiculo?.AnoModelo}`}</h2>
             <Box
               component='div'
               p={2}
