@@ -1,8 +1,30 @@
 import React from 'react';
 import Head from 'next/head';
-import { Box, CircularProgress } from '@mui/material';
+import { Box, CircularProgress, createStyles } from '@mui/material';
+import { makeStyles } from '@material-ui/styles';
 
-const ResultadoPage = ({ veiculo, loading }: any) => {
+const useStyles = makeStyles(() => createStyles({
+  flexDefault: {
+    display: 'flex',
+    alignItems: 'center',
+    justifyContent: 'center',
+  },
+  bgColorGreen: {
+    backgroundColor: '#7cccab'
+  },
+  bgColorBlue: {
+    backgroundColor: '#009a8a'
+  }
+}));
+
+interface IProps {
+  veiculo: string | any,
+  loading: boolean
+}
+
+const ResultadoPage = ({ veiculo, loading }: IProps) => {
+
+  const styles: any = useStyles()
 
   return (
     <>
@@ -14,8 +36,8 @@ const ResultadoPage = ({ veiculo, loading }: any) => {
       {loading && (
         <Box 
           component='div'
-          display='flex'
-          justifyContent='center'
+          className={styles.flexDefault}
+          minHeight='100vh'
         >
           <CircularProgress />
         </Box>
@@ -24,31 +46,26 @@ const ResultadoPage = ({ veiculo, loading }: any) => {
         <Box
           component='div'
           minHeight='100vh'
-          display='grid'
-          justifyContent='center'
-          alignItems='center'
+          className={styles.flexDefault}
         >
           <Box
             component='div'
-            display='flex'
-            alignItems='center'
-            justifyContent='center'
             flexDirection='column'
             width='100vw'
             padding={2}
             gap={2}
-            backgroundColor='#7cccab'
+            className={`${styles.flexDefault} ${styles.bgColorGreen}`}
           >
             <h2 style={{margin: 0}}>{`Tabela Fipe: Preço ${veiculo?.Marca} ${veiculo?.AnoModelo}`}</h2>
             <Box
               component='div'
-              backgroundColor='#009a8a'
               p={2}
               color='#fff'
               borderRadius='50px'
               textTransform='uppercase'
               fontSize='18px'
               fontWeight='700'
+              className={styles.bgColorBlue}
             >
               {veiculo?.Valor}
             </Box>
@@ -58,7 +75,6 @@ const ResultadoPage = ({ veiculo, loading }: any) => {
             >
               Este é o preço de compra do veículo.
             </Box>
-
           </Box>
         </Box>
       )}

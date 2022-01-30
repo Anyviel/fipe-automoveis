@@ -47,14 +47,6 @@ const SelectInputMarca = ({ id, label, value, onChange }: ISelectProps) => {
             </MenuItem>
           ))}
         </Select>
-        {/* <Autocomplete
-          variant="filled"
-          onChange={onChange}
-          id={id}
-          options={data}
-          renderInput={(params) => <TextField {...params} label={label} />}
-          getOptionLabel={(option) => `${option?.nome}`}
-        /> */}
       </FormControl>
     )}
   </>
