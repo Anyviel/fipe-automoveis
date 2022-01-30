@@ -11,8 +11,8 @@ const SelectContextProvider: React.FC<any> = ({ children }) => {
     ano: ''
   });
 
-  const handleChange = (value: any, name: any) => {
-    setValues({...values, [name]: value})
+  const handleChange = (value: any, name: string) => {
+    setValues({...values, [name]: value});
   }
 
   const value = { values, handleChange };

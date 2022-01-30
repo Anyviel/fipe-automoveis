@@ -2,6 +2,21 @@ import React from 'react';
 import { useSelectContext } from '../../context/SelectContext';
 import { useFetch } from '../../hooks/useFetch';
 import ResultadoPage from './ResultadoPage';
+import { createStyles, makeStyles } from '@material-ui/styles';
+
+const useStyles = makeStyles(() => createStyles({
+  flexDefault: {
+    display: 'flex',
+    alignItems: 'center',
+    justifyContent: 'center',
+  },
+  bgColorGreen: {
+    backgroundColor: '#7cccab'
+  },
+  bgColorBlue: {
+    backgroundColor: '#009a8a'
+  }
+}));
 
 const ResultadoPageContainer = () => {
 
@@ -15,7 +30,7 @@ const ResultadoPageContainer = () => {
     }
   }, [request, values]);
 
-  return <ResultadoPage veiculo={data} loading={loading} />;
+  return <ResultadoPage veiculo={data} loading={loading} useStyles={useStyles} />;
 };
 
 export default ResultadoPageContainer;

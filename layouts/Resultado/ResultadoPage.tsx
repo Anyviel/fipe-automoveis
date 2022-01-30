@@ -1,29 +1,15 @@
 import React from 'react';
 import Head from 'next/head';
-import { Box, Button, CircularProgress, createStyles } from '@mui/material';
-import { makeStyles } from '@material-ui/styles';
+import { Box, Button, CircularProgress } from '@mui/material';
 import Link from 'next/link';
-
-const useStyles = makeStyles(() => createStyles({
-  flexDefault: {
-    display: 'flex',
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
-  bgColorGreen: {
-    backgroundColor: '#7cccab'
-  },
-  bgColorBlue: {
-    backgroundColor: '#009a8a'
-  }
-}));
 
 interface IProps {
   veiculo: string | any,
-  loading: boolean
+  loading: boolean,
+  useStyles: () => void,
 }
 
-const ResultadoPage = ({ veiculo, loading }: IProps) => {
+const ResultadoPage = ({ veiculo, loading, useStyles }: IProps) => {
 
   const styles: any = useStyles()
 
@@ -55,6 +41,7 @@ const ResultadoPage = ({ veiculo, loading }: IProps) => {
             width='100vw'
             padding={2}
             gap={2}
+            textAlign='center'
             className={`${styles.flexDefault} ${styles.bgColorGreen}`}
           >
             {

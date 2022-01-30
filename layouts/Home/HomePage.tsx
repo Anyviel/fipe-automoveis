@@ -1,35 +1,20 @@
 import React from 'react';
 import Head from 'next/head'
 import { 
-  Box, Button, createStyles,
+  Box, Button,
 } from '@mui/material';
 import SelectInputMarca from '../../components/SelectMarca';
 import SelectInputModelo from '../../components/SelectModelo';
 import SelectInputAno from '../../components/SelectAno';
 import Link from 'next/link';
-import { makeStyles } from '@material-ui/styles';
-
-const useStyles = makeStyles(() => createStyles({
-  boxShadow: {
-    display: 'flex',
-    flexDirection: 'column',
-    alignItems: 'center',
-    justifyContent: 'center',
-    backgroundColor: '#FFF',
-    boxShadow: '0 2px 4px rgba(0,0,0,.5)',
-    borderRadius: '4px'
-  },
-  bgColor: {
-    backgroundColor: '#eee'
-  }
-}))
 
 interface IProps {
   values: any,
   handleChange: (value: any, type: string) => void,
+  useStyles: () => void,
 }
 
-const HomePage = ({ values, handleChange }: IProps) => {
+const HomePage = ({ values, handleChange, useStyles }: IProps) => {
 
   const styles: any = useStyles();
 
