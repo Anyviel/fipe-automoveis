@@ -11,13 +11,11 @@ const SelectContextProvider: React.FC<any> = ({ children }) => {
     ano: ''
   });
 
-  const [aleatorio, setAleatorio] = React.useState('Aleatório');
-
   const handleChange = (value: any, name: any) => {
     setValues({...values, [name]: value})
   }
 
-  const value = { values, handleChange, aleatorio, setAleatorio };
+  const value = { values, handleChange };
   return (
     <SelectContext.Provider value={value}>
       {children}

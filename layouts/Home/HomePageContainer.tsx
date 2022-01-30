@@ -4,11 +4,7 @@ import { useSelectContext } from '../../context/SelectContext';
 
 const HomePageContainer = () => {
 
-  const { values, handleChange, aleatorio, setAleatorio }: any = useSelectContext();
-
-  setAleatorio('Jonathan');
-  
-  console.log('Aleatorio:', aleatorio);
+  const { values, handleChange }: any = useSelectContext();
 
   return <HomePage values={values} handleChange={handleChange} />;
 };

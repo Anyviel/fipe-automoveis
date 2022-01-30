@@ -5,7 +5,7 @@ import ResultadoPage from './ResultadoPage';
 
 const ResultadoPageContainer = () => {
 
-  const { values, aleatorio }: any = useSelectContext();
+  const { values }: any = useSelectContext();
   const { data, request, loading } = useFetch();
 
   React.useEffect(() => {
@@ -14,10 +14,6 @@ const ResultadoPageContainer = () => {
       request(URL);
     }
   }, [request, values]);
-
-  console.log('AleatorioResult: ', aleatorio);
-  console.log('Values: ', values);
-  console.log('Data: ', data);
 
   return <ResultadoPage veiculo={data} loading={loading} />;
 };
