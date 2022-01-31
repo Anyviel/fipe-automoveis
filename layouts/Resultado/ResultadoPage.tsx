@@ -68,12 +68,15 @@ const ResultadoPage = ({ veiculo, loading, useStyles }: IProps) => {
                   </Box>
                 </>
               ) : (
-                <Link href='/' passHref>
-                  <Button
-                    variant='contained'
-                    color='primary'
-                  >Fazer Consulta</Button>
-                </Link>
+                <>
+                  <h2>Não encontramos nenhum resultado</h2>
+                  <Link href='/' passHref>
+                    <Button
+                      variant='contained'
+                      color='primary'
+                    >Refazer Consulta</Button>
+                  </Link>
+                </>
                 )
               }
             </Box>

@@ -1,8 +1,7 @@
 import React from 'react';
 import HomePage from './HomePage';
 import { useSelectContext } from '../../context/SelectContext';
-import { createStyles } from '@mui/material';
-import { makeStyles } from '@material-ui/styles';
+import { makeStyles, createStyles } from '@material-ui/styles';
 
 const useStyles = makeStyles(() => createStyles({
   boxShadow: {

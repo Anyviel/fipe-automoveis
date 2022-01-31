@@ -12,6 +12,21 @@ const SelectContextProvider: React.FC<any> = ({ children }) => {
   });
 
   const handleChange = (value: any, name: string) => {
+    switch (name) {
+      case 'marca':
+        setValues({
+          ...values,
+          modelo: '',
+          ano: '',
+        })
+      case 'modelo':
+        setValues({
+          ...values,
+          ano: '',
+        })
+      default: 
+        break;
+    } 
     setValues({...values, [name]: value});
   }
 
